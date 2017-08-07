@@ -13,6 +13,7 @@ class App extends Component {
   componentDidMount() {
     // Is there a React-y way to avoid rebinding `this`? fat arrow?
     const url = 'https://codepen.io/jobs.json';
+    const myUrl = 'https://github.com/naimjeem';
     this.serverRequest =
       axios.get(url)
         .then((result) => {
@@ -30,6 +31,9 @@ class App extends Component {
     return (
       <div className='container'>
         <h1>Codepen Jobs!</h1>
+        <span>
+           By <a href='https://github.com/naimjeem' target='_blank'><h3>Naim Jeem</h3></a>
+        </span>
         {/* Don't have an ID to use for the key, URL work ok? */}
         {this.state.jobs.map((job) => {
           return (
