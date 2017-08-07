@@ -28,18 +28,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <h1>Codepen Jobs!</h1>
         {/* Don't have an ID to use for the key, URL work ok? */}
         {this.state.jobs.map((job) => {
           return (
-            <span key={job.url} className="job">
-
+            <a href={job.url} target='_blank'>
+              <span key={job.url} className="job">
                 <h2>{job.company_name}</h2>
-              <span><b>{job.title}</b>   </span>
-              <span className='term'>{job.term}</span>
-
-            </span>
+                <span><b>{job.title}</b>   </span>
+                <span className='term'>{job.term}</span>
+              </span>
+            </a>
           );
         })}
       </div>
